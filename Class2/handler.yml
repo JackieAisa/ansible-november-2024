@@ -1,0 +1,14 @@
+- hosts: all
+  become: yes
+  tasks: 
+  - name: install packages 
+    ansible.builtin.apt:
+      name: unzip
+    notify: Start service
+
+  handlers:
+  - name: Start service
+    ansible.builtin.service:
+      name: apache2
+      state: restarted
+      enabled: yes

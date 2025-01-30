@@ -1,0 +1,14 @@
+- hosts: all
+  become: yes
+  vars: 
+    package: sapache2 
+  tasks: 
+  - name: install packages 
+    ansible.builtin.apt:
+      name: "{{ package }}"
+
+  - name: Start service
+    ansible.builtin.service:
+      name: "{{ package }}"
+      state: started
+      enabled: yes
