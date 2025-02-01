@@ -8,3 +8,5 @@
     include_tasks: packages.yml
   - name: Install Wordpress
     include_tasks: wordpress.yml
+  - name: Install database
+    include_tasks: db.yml
