@@ -1,4 +1,4 @@
-- name: Download wordpress
+- name: Download Wordps
   ansible.builtin.get_url:
     url: https://wordpress.org/latest.tar.gz 
     dest: /tmp/wordpress.tar.gz
